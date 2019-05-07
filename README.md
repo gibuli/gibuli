@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages haha
+## Welcome to GitHub Pages ha
 
 You can use the [editor on GitHub](https://github.com/gibuli/gibuli/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
