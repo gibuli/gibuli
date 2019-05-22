@@ -7,7 +7,7 @@ deploy:
   provider: pages
   local_dir: ./dist
   skip_cleanup: true
-  api_key: 8a9d5ab726b283576d021d0d4fd88db844a90483
+  github_token: 8a9d5ab726b283576d021d0d4fd88db844a90483
   keep_history: true
   on:
     branch: master
