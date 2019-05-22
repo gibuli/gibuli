@@ -7,7 +7,7 @@ deploy:
   provider: pages
   local_dir: ./build
   skip_cleanup: true
-  github_token: 776935011730878a0126d6eda4f9e403380eb705
+  github_token: 8a9d5ab726b283576d021d0d4fd88db844a90483
   keep_history: true
   on:
     branch: master
