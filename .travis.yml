@@ -1,8 +1,9 @@
 
 language: node_js
+sudo: required
 node_js: stable
 #script: npm run build
-script: ./deploy.sh
+script: sudo sh deploy.sh
 
 # deploy:
 #   provider: pages
