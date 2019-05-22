@@ -2,7 +2,6 @@
 language: node_js
 sudo: required
 node_js: stable
-install: true
 #script: npm run build
 script: sh deploy.sh
 
