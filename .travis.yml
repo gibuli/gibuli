@@ -1,15 +1,13 @@
 
 language: node_js
-sudo: required
 node_js: stable
-#script: npm run build
-script: sh deploy.sh
+script: npm run build
 
-# deploy:
-#   provider: pages
-#   local_dir: ./dist
-#   skip_cleanup: true
-#   github_token: 776935011730878a0126d6eda4f9e403380eb705
-#   keep_history: true
-#   on:
-#     branch: master
+deploy:
+  provider: pages
+  local_dir: ./build
+  skip_cleanup: true
+  github_token: 776935011730878a0126d6eda4f9e403380eb705
+  keep_history: true
+  on:
+    branch: master
