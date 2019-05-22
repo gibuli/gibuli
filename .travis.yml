@@ -8,8 +8,8 @@ deploy:
   local_dir: ./dist
   skip_cleanup: true
   #github_token: cxQ2VhiKLtlATMU61SR2KQ
-  github_token: -2zKEUps60MWIdoYRmeAEA
-  #github_token: 59234394f4ca825ef05324a0d5349f3f89477d44
+  #github_token: -2zKEUps60MWIdoYRmeAEA
+  github_token: 59234394f4ca825ef05324a0d5349f3f89477d44
   keep_history: true
   on:
     branch: master
