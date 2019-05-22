@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br>我是内容<br><br><br><br></div>
+</body>
+<script>
+	/*
+		防抖解释：（限制连续触发）
+		当一次事件发生后，事件处理器要等一定阈值的时间，如果这段时间过去后 再也没有 事件发生，就处理最后一次发生的事件。假设还差 0.01 秒就到达指定时间，这时又来了一个事件，那么之前的等待作废，需要重新再等待指定时间。
+
+	*/
+	// 防抖动函数
+	function debounce(fn,wait=50,immediate) {
+	    let timer;
+	    return function() {
+	        if(immediate) {//马上触发
+	            fn.apply(this,arguments)
+	        }
+	        if(timer) clearTimeout(timer)//清掉上一次计时，重新计算等待时间
+	        timer = setTimeout(()=> {
+	            fn.apply(this,arguments)
+	        },wait)
+	    }
+	}
+
+	function throttle(fn, wait) {//在wait内只执行一次
+		let prev = new Date();
+		return function() { 
+		    const args = arguments;
+			const now = new Date();
+			if (now - prev > wait) {
+				fn.apply(this, args);
+				prev = new Date();
+			}
+		}
+	}
+
+	const debthr = function(fn, delay, isDebounce) {//防抖和节流综合版
+	  let timer
+	  let lastCall = 0
+	  return function (...args) {
+	    if (isDebounce) {
+	      if (timer) clearTimeout(timer)
+	      timer = setTimeout(() => {
+	        fn(...args)
+	      }, delay)
+	    } else {
+	      const now = new Date().getTime()
+	      if (now - lastCall < delay) return
+	      lastCall = now
+	      fn(...args)
+	    }
+	  }
+	}
+
+
+
+	
+	// 实际想绑定在 scroll 事件上的 handler
+	function realFunc(){
+	    console.log("Success");
+	}
+
+	// 采用了防抖动
+	//window.addEventListener('scroll',debounce(realFunc,1000,false));
+	// 采用了节流
+	//window.addEventListener('scroll',throttle(realFunc,1000));
+	
+	//综合法
+	window.addEventListener('scroll',debthr(realFunc,1000,true));
+
+	// 没采用防抖动
+	//window.addEventListener('scroll',realFunc);
+	
+	/*
+		防抖和节流的区别：
+		防抖是只要有新的动作进来，就重新计算时间再触发
+		节流是规定在X秒内只触发一次
+
+	 */
+
+
+</script>
+</html>

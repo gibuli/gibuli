@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="common.css">
+	<script type="text/javascript" src="jq.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<strong>css3-radio（显式）</strong>
+	<div class="demo10_1">
+		
+		<div>
+		  <input class="magic-radio" type="radio" name="radio" id="11">
+		  <label for="11">Normal</label>
+		</div>
+
+		<div>
+		  <input class="magic-radio" type="radio" name="radio" id="22" checked>
+		  <label for="22">Checked</label>
+		</div>
+
+		<div>
+		  <input class="magic-radio" type="radio" id="33" disabled="disabled">
+		  <label for="33">Disabled</label>
+		</div>
+
+		<div>
+		  <input class="magic-radio" type="radio" id="44" disabled="disabled" checked>
+		  <label for="44">Checked && Disabled</label>
+		</div>
+	</div>
+
+	<strong>css3-checkbox（显式）</strong>
+	<div class="demo10_2">
+		<div>
+		  <input class="magic-checkbox" type="checkbox" name="layout" id="1">
+		  <label for="1">Normal</label>
+		</div>
+
+		<div>
+		  <input class="magic-checkbox" type="checkbox" name="layout" id="2" checked="checked">
+		  <label for="2">Checked</label>
+		</div>
+
+		<div>
+		  <input class="magic-checkbox" type="checkbox" name="layout" id="3" disabled="disabled">
+		  <label for="3">
+		    Disabled
+		  </label>
+		</div>
+
+		<div>
+		  <input class="magic-checkbox" type="checkbox" name="layout" id="4" checked disabled="disabled">
+		  <label for="4">Checked && Disabled</label>
+		</div>
+	</div>
+
+	<strong>css3-checkbox（switch-显式）</strong>
+	<div class="demo10_3">
+		<div>
+			<input class="magic-switch magic-switch-animbg" type="checkbox" name="layout" id="111">
+			<label for="111"></label>
+
+			<input class="magic-switch magic-switch-animbg" checked type="checkbox" name="layout" id="222">
+			<label for="222"></label>
+
+			<input class="magic-switch" disabled type="checkbox" name="layout" id="333">
+			<label for="333"></label>
+
+			<input class="magic-switch" disabled checked type="checkbox" name="layout" id="444">
+			<label for="444"></label>
+
+		</div>
+	</div>
+
+	
+	<strong>css3-radio（隐式）</strong>
+	<div class="demo10_4">
+		<label class="bui-radios-label bui-radios-anim">
+		    <input type="radio" name="sex"/><i class="bui-radios"></i> 男
+		</label>
+		<label class="bui-radios-label bui-radios-anim">
+		    <input type="radio" checked="" name="sex"/><i class="bui-radios"></i> 女
+		</label>
+		<label class="bui-radios-label">
+		    <input type="radio" disabled="" name="sex"/><i class="bui-radios"></i> 不男不女
+		</label>
+		<label class="bui-radios-label">
+		    <input type="radio" checked="" disabled="" name="ddd"/><i class="bui-radios"></i> 不男不女
+		</label>
+	</div>
+
+	<strong>css3-checkbox（隐式）</strong>
+	<div class="demo10_5">
+		<label class="bui-checkbox-label  bui-checkbox-anim">
+		    <input type="checkbox" checked="" name="sex"/><i class="bui-checkbox"></i> 男
+		</label>
+		<label class="bui-checkbox-label  bui-checkbox-anim">
+		    <input type="checkbox" name="sex"/><i class="bui-checkbox"></i> 女
+		</label>
+		<label class="bui-checkbox-label">
+		    <input type="checkbox" disabled="" name="sex"/><i class="bui-checkbox"></i> 不男不女
+		</label>
+		<label class="bui-checkbox-label">
+		    <input type="checkbox" checked="" disabled="" name="ddd"/><i class="bui-checkbox"></i> 不男不女
+		</label>
+	</div>
+
+	<strong>css3-checkbox（switch-隐式）</strong>
+	<div class="demo10_6">
+		<label class="bui-switch-label bui-switch-animbg">
+		    <input type="checkbox" name="s"/><i class="bui-switch"></i>
+		</label>
+		<label class="bui-switch-label bui-switch-animbg">
+		    <input type="checkbox" checked="" name="s"/><i class="bui-switch"></i>
+		</label>
+		<label class="bui-switch-label">
+		    <input type="checkbox" disabled="" name="sex"/><i class="bui-switch"></i>
+		</label>
+		<label class="bui-switch-label">
+		    <input type="checkbox" checked="" disabled="" name="ddd"/><i class="bui-switch"></i>
+		</label>
+
+	</div>
+	
+</body>
+</html>

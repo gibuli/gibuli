@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="common.css">
+	<script type="text/javascript" src="jq.js"></script>
+	<style>
+		.form-style{
+			border:1px solid #cdcdcd;
+			background-color: #fff;
+			padding: 10px;
+			cursor: pointer;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			outline:0;
+		}
+
+		.form-style:focus{
+			border-color:#66afe9;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+		}
+
+		.demo7_1:focus-within {
+		  background: #ff8;
+		}
+
+		input[pattern]:invalid{
+		  color:red;
+		}
+	</style>
+</head>
+<body>
+	<strong>表单布局</strong>
+	<form>
+		<label for="name">姓名</label>
+		<input class="form-style" id="name" type="text" value="king" />
+		<label for="sex">性别</label>
+		<input type="checkbox" name="male" />
+		<input type="checkbox" name="female" />
+	</form>
+	<strong>autofocus</strong>
+	<form>
+		<label for="autofocus">自动聚焦</label>
+		<input class="form-style" id="autofocus" type="text" value="king" autofocus />
+	</form>
+	<strong>autocomplete（历史）</strong>
+	<form autocomplete="on">
+		<label for="autocomplete">自动完成</label>
+		<input class="form-style" id="autocomplete" type="text" />
+	</form>
+	<strong>datalist（指定）</strong>
+	<form>
+		<label for="list">选项列表</label>
+		<input class="form-style" list="url_list" id="list" type="text" />
+		<datalist id="url_list">
+			<option label="W3School" value="http://www.w3school.com.cn" />
+			<option label="Google" value="http://www.google.com" />
+			<option label="Microsoft" value="http://www.microsoft.com" />
+		</datalist>
+	</form>
+	<strong>focus-within</strong>
+	<form class="demo7_1">
+		<label for="focus-within">focus表单元素，父（祖）级变化</label>
+		<input class="form-style" id="focus-within" type="text" />
+	</form>
+	<strong>min/max/step</strong>
+	<form>
+		<label for="ms">根据min/max/step 都初始化算好了</label>
+		<input class="form-style" id="ms" type="number" min="-1" max="10" step="3" />
+	</form>
+	<strong>range</strong>
+	<form>
+		<label for="range">range</label>
+		<input id="range" type="range" min="1" max="10" value="6" />
+	</form>
+	<strong>pattern</strong>
+	<form autocomplete="off">
+		<label for="pattern">pattern</label>
+		<input class="form-style" id="pattern" type="text" pattern="[A-z]{3}" oninput="this.reportValidity()" />
+		<button>提交</button>
+	</form>
+</body>
+<script>
+	// var a = document.getElementById('pattern');
+	// a.oninput = function(){
+	// 	this.reportValidity()//如果不匹配，会反馈
+	// 	//this.setCustomValidity('我是自定义的提示文案');//修改提示的文案
+	// 	//console.log(this.checkValidity())//检测是否符合pattern
+	// }
+</script>
+</html>

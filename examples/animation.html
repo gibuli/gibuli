@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="common.css">
+	<script type="text/javascript" src="jq.js"></script>
+	<style>
+
+		@keyframes move{
+		  0%{left:0}
+		  100%{left:600px;}
+		}
+
+		.demo_ani{
+			position: relative;
+			height: 120px;
+		}
+
+		.demo_ani div{
+			width: 100px;
+			height: 100px;
+			border:1px solid #000;
+  			background:red;
+  			position: absolute;
+			top:0;
+			left:0;
+		}
+
+
+		.demo11_1 div.move{
+			animation:move 2s;
+		}
+
+		.demo11_2 div.move{
+			animation:move 2s forwards;
+		}
+
+		.demo11_3 div.move{
+			animation:move 2s forwards 6;/*0-600px 6次*/
+		}
+
+		.demo11_4 div.move{
+			animation-name:move;
+			animation-duration:2s;/*单次走2s*/
+			animation-timing-function:linear;
+			animation-iteration-count:5;/*走5次，到端就算一次*/
+			animation-fill-mode:forwards;
+			animation-direction:alternate;/*连续性*/
+			/*动画播放在第偶数次向前播放，第奇数次向反方向播放,默认第一次不算*/
+		}
+
+
+	</style>
+</head>
+<body>
+	<strong>animation-fill-mode（默认：backwards）</strong>
+	<div class="demo_ani demo11_1">
+		<div></div>
+	</div>
+
+	<strong>animation-fill-mode（forwards）</strong>
+	<div class="demo_ani demo11_2">
+		<div></div>
+	</div>
+
+	<strong>animation-direction（默认：normal）</strong>
+	<div class="demo_ani demo11_3">
+		<div></div>
+	</div>
+
+	<strong>animation-direction（默认：alternate）</strong>
+	<div class="demo_ani demo11_4">
+		<div></div>
+	</div>
+
+	<strong>animation-play-state</strong>
+	
+	<button id="resetBtn">重置所有</button>
+</body>
+<script>
+	$('.demo_ani').on('click',function(){
+		$(this).find('div').addClass('move');
+	});
+
+	$('#resetBtn').on('click',function(){
+		$.each($('.demo_ani'),function(index, el) {
+			$(el).find('div').removeClass('move');
+		});
+	});
+	
+</script>
+</html>
