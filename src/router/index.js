@@ -58,13 +58,19 @@ export const constantRouterMap = [
         name: "Image-Text",
         component: () => import("@/views/quicklayout/image-text"),
         meta: { title: "image-text", icon: "form" }
+      },
+      {
+        path: "icon-text",
+        name: "Icon-Text",
+        component: () => import("@/views/quicklayout/icon-text"),
+        meta: { title: "icon-text", icon: "form" }
+      },
+      {
+        path: "css3-scrollbar",
+        name: "css3-scrollbar",
+        component: () => import("@/views/quicklayout/css3-scrollbar"),
+        meta: { title: "css3-scrollbar", icon: "form" }
       }
-      // {
-      //   path: 'icon-text',
-      //   name: 'Icon-Text',
-      //   component: () => import('@/views/quicklayout/icon-text'),
-      //   meta: { title: 'icon-text', icon: 'form' }
-      // }
     ]
   },
 

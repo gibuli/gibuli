@@ -198,3 +198,90 @@ strong {
 }
 
 /*image-text*/
+
+/*icon-text*/
+.demo2_1 {
+  display: inline-block;
+  background: url(https://p4.ssl.qhimg.com/t01b7ac355f2e6eda37.png) no-repeat 0
+    center;
+  padding-left: 18px;
+  &:after {
+    content: attr(data-likenum);
+  }
+}
+
+/*icon-text*/
+
+/*css3 scrollbar*/
+.demo9_1 {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #555;
+  }
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+/*定义滑块 内阴影+圆角*/
+.demo9_2 {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(to left, #96a6bf, #63738c);
+    box-shadow: inset 0 0 1px 1px #5c6670;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #eee;
+    box-shadow: 0 0 1px 1px #bbb, inset 0 0 7px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.demo9_3 {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(to left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+  }
+}
+/*扩展*/
+/* .demo9_1::-webkit-scrollbar-track-piece:start {
+			background: red;
+			滚动条上半边或左半边的背景色
+		} */
+/* .demo9_1::-webkit-scrollbar-track-piece:end {
+			滚动条下半边或右半边的背景色
+			background: red;
+		} */
+/* .demo9_1::-webkit-scrollbar-button {滚动条的轨道的两端按钮
+			background: green;
+		} */
+/*扩展*/
+.demo9_1,
+.demo9_2,
+.demo9_3 {
+  width: 200px;
+  max-height: 200px;
+  overflow: auto;
+}
