@@ -67,9 +67,60 @@ export const constantRouterMap = [
       },
       {
         path: "css3-scrollbar",
-        name: "css3-scrollbar",
+        name: "Css3-scrollbar",
         component: () => import("@/views/quicklayout/css3-scrollbar"),
         meta: { title: "css3-scrollbar", icon: "form" }
+      },
+      {
+        path: "backtop",
+        component: () => import("@/views/quicklayout/backtop/index"), // Parent router-view
+        name: "backtop",
+        meta: { title: "backtop(0/anchor)", icon: "form" },
+        redirect: "/quicklayout/backtop/backtop-1",
+        children: [
+          {
+            path: "backtop-1",
+            component: () => import("@/views/quicklayout/backtop/backtop-1"),
+            name: "backtop-1",
+            meta: { title: "backtop-1", icon: "form" }
+          },
+          {
+            path: "backtop-2",
+            component: () => import("@/views/quicklayout/backtop/backtop-2"),
+            name: "backtop-2",
+            meta: { title: "backtop-2", icon: "form" }
+          },
+          {
+            path: "backtop-3",
+            component: () => import("@/views/quicklayout/backtop/backtop-3"),
+            name: "backtop-3",
+            meta: { title: "backtop-3", icon: "form" }
+          },
+          {
+            path: "backtop-4",
+            component: () => import("@/views/quicklayout/backtop/backtop-4"),
+            name: "backtop-4",
+            meta: { title: "backtop-4", icon: "form" }
+          },
+          {
+            path: "backtop-5",
+            component: () => import("@/views/quicklayout/backtop/backtop-5"),
+            name: "backtop-5",
+            meta: { title: "backtop-5", icon: "form" }
+          },
+          {
+            path: "backtop-6",
+            component: () => import("@/views/quicklayout/backtop/backtop-6"),
+            name: "backtop-6",
+            meta: { title: "backtop-6", icon: "form" }
+          },
+          {
+            path: "backtop-7",
+            component: () => import("@/views/quicklayout/backtop/backtop-7"),
+            name: "backtop-7",
+            meta: { title: "backtop-7", icon: "form" }
+          }
+        ]
       }
     ]
   },
