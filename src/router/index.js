@@ -121,6 +121,39 @@ export const constantRouterMap = [
             meta: { title: "backtop-7", icon: "form" }
           }
         ]
+      },
+      {
+        path: "loading",
+        component: () => import("@/views/quicklayout/loading/index"), // Parent router-view
+        name: "loading",
+        meta: { title: "loading", icon: "form" },
+        redirect: "/quicklayout/loading/loading1",
+        children: [
+          {
+            path: "loading1",
+            component: () => import("@/views/quicklayout/loading/loading1"),
+            name: "loading1",
+            meta: { title: "loading1", icon: "form" }
+          },
+          {
+            path: "loading2",
+            component: () => import("@/views/quicklayout/loading/loading2"),
+            name: "loading2",
+            meta: { title: "loading2", icon: "form" }
+          },
+          {
+            path: "loading3",
+            component: () => import("@/views/quicklayout/loading/loading3"),
+            name: "loading3",
+            meta: { title: "loading3", icon: "form" }
+          }
+        ]
+      },
+      {
+        path: "close",
+        name: "close",
+        component: () => import("@/views/quicklayout/close"),
+        meta: { title: "close", icon: "form" }
       }
     ]
   },
@@ -134,6 +167,18 @@ export const constantRouterMap = [
         name: "常用工具",
         component: () => import("@/views/tools/index"),
         meta: { title: "常用工具", icon: "form" }
+      }
+    ]
+  },
+  {
+    path: "/plugins",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "常用插件",
+        component: () => import("@/views/plugins/index"),
+        meta: { title: "常用插件", icon: "form" }
       }
     ]
   },
