@@ -154,6 +154,18 @@ export const constantRouterMap = [
         name: "close",
         component: () => import("@/views/quicklayout/close"),
         meta: { title: "close", icon: "form" }
+      },
+      {
+        path: "container-center",
+        name: "container-center",
+        component: () => import("@/views/quicklayout/container-center"),
+        meta: { title: "container-center", icon: "form" }
+      },
+      {
+        path: "css3-selector",
+        name: "css3-selector",
+        component: () => import("@/views/quicklayout/css3-selector"),
+        meta: { title: "css3-selector", icon: "form" }
       }
     ]
   },
