@@ -303,6 +303,7 @@
           </div>
         </div>
       </script>
+
       <pre><code class="language-scss">
         .demo1_6 {
           font-size: 0;
@@ -327,6 +328,24 @@
           }
         }
       </code></pre>
+
+      <pre><code class="language-js">
+          function layoutjs() {
+              var $ele = $(".demo1_6 .des");
+              var maxH = 44;
+              if ($ele.height() <= maxH) {
+                $ele.height("auto");
+              } else {
+                while ($ele.height() > maxH) {
+                  $ele.text($ele.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+                }
+              }
+
+              $ele.css("visibility", "visible");
+          }
+
+          layoutjs();
+      </code></pre>
     </div>
   </div>
 </template>
@@ -336,7 +355,20 @@
 </style>
 <script>
 import Prism from "prismjs";
-import { layoutjs } from "@/styles/layout-common";
+
+function layoutjs() {
+  var $ele = $(".demo1_6 .des");
+  var maxH = 44;
+  if ($ele.height() <= maxH) {
+    $ele.height("auto");
+  } else {
+    while ($ele.height() > maxH) {
+      $ele.text($ele.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+    }
+  }
+
+  $ele.css("visibility", "visible");
+}
 
 export default {
   data() {

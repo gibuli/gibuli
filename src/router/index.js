@@ -41,7 +41,6 @@ export const constantRouterMap = [
     //   component: () => import('@/views/quicklayout/index')
     // }]
   },
-
   {
     path: "/quicklayout",
     component: Layout,
@@ -169,7 +168,44 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  {
+    path: "/animation",
+    component: Layout,
+    redirect: "/animation/base",
+    name: "animation",
+    meta: {
+      title: "动画操作",
+      icon: "nested"
+    },
+    alwaysShow: true,
+    children: [
+      {
+        path: "base",
+        name: "base",
+        component: () => import("@/views/animation/base"),
+        meta: { title: "base", icon: "form" }
+      }
+    ]
+  },
+  {
+    path: "/regular",
+    component: Layout,
+    redirect: "/regular/base",
+    name: "regular",
+    meta: {
+      title: "正则",
+      icon: "nested"
+    },
+    alwaysShow: true,
+    children: [
+      {
+        path: "base",
+        name: "base",
+        component: () => import("@/views/regular/base"),
+        meta: { title: "base", icon: "form" }
+      }
+    ]
+  },
   {
     path: "/tools",
     component: Layout,
