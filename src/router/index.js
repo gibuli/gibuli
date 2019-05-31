@@ -184,6 +184,18 @@ export const constantRouterMap = [
         name: "base",
         component: () => import("@/views/animation/base"),
         meta: { title: "base", icon: "form" }
+      },
+      {
+        path: "setTimeout",
+        name: "setTimeout",
+        component: () => import("@/views/animation/setTimeout"),
+        meta: { title: "setTimeout", icon: "form" }
+      },
+      {
+        path: "requestAnimationFrame",
+        name: "requestAnimationFrame",
+        component: () => import("@/views/animation/requestAnimationFrame"),
+        meta: { title: "requestAnimation", icon: "form" }
       }
     ]
   },
