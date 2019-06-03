@@ -231,6 +231,18 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: "/blogs",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "常看博客",
+        component: () => import("@/views/blogs/index"),
+        meta: { title: "常看博客", icon: "form" }
+      }
+    ]
+  },
+  {
     path: "/plugins",
     component: Layout,
     children: [
