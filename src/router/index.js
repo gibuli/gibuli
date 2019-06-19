@@ -169,6 +169,31 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: "/toolFn",
+    component: Layout,
+    redirect: "/toolFn/date",
+    name: "工具函数",
+    meta: {
+      title: "工具函数",
+      icon: "nested"
+    },
+    alwaysShow: true,
+    children: [
+      {
+        path: "date",
+        name: "date",
+        component: () => import("@/views/toolFn/date"),
+        meta: { title: "date", icon: "form" }
+      },
+      {
+        path: "operate",
+        name: "operate",
+        component: () => import("@/views/toolFn/operate"),
+        meta: { title: "operate", icon: "form" }
+      }
+    ]
+  },
+  {
     path: "/animation",
     component: Layout,
     redirect: "/animation/base",
