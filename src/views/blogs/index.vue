@@ -35,7 +35,15 @@ export default {
         {
           link: "https://www.liaoxuefeng.com/",
           title: "廖雪峰"
-        }
+        },
+        {
+          link: "https://www.zhangxinxu.com/wordpress/",
+          title: "张鑫旭"
+        },
+        {
+          link: "http://www.ruanyifeng.com/blog/archives.html",
+          title: "阮一峰"
+        },
       ]
     };
   },
