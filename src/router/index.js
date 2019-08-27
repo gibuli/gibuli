@@ -291,6 +291,42 @@ export const constantRouterMap = [
       }
     ]
   },
+  {
+    path: "/creativeLab",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "创意实验室",
+        component: () => import("@/views/creativeLab/index"),
+        meta: { title: "创意实验室", icon: "form" }
+      }
+    ]
+  },
+  {
+    path: "/myTracks",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "我的足迹",
+        component: () => import("@/views/myTracks/index"),
+        meta: { title: "我的足迹", icon: "form" }
+      }
+    ]
+  },
+  {
+    path: "external-link",
+    component: Layout,
+    children: [
+      {
+        path: "https://github.com/gitkingchen",
+        name: "开源项目",
+        meta: { title: "开源项目", icon: "form" }
+      }
+    ]
+  },
+  
 
   { path: "*", redirect: "/404", hidden: true }
 ];
