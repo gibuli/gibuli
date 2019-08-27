@@ -190,6 +190,18 @@ export const constantRouterMap = [
         name: "operate",
         component: () => import("@/views/toolFn/operate"),
         meta: { title: "operate", icon: "form" }
+      },
+      {
+        path: "throttle",
+        name: "throttle",
+        component: () => import("@/views/toolFn/throttle"),
+        meta: { title: "throttle", icon: "form" }
+      },
+      {
+        path: "debounce",
+        name: "debounce",
+        component: () => import("@/views/toolFn/debounce"),
+        meta: { title: "debounce", icon: "form" }
       }
     ]
   },

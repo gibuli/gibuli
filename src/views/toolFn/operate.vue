@@ -2,14 +2,30 @@
   <div style="padding:30px;">
     <!--priview-->
     <div>
-      <strong>删除元素</strong>
+      <strong>替换key</strong>
     </div>
     <!--priview-->
     <!--code-->
     <div style="width:800px;">
 
       <pre><code class="language-js">
+          将value 替换为id
+          var data = [
+            {name:'a', value:'1'},
+            {name:'b', value:'2'}
+          ].map(function(item) {
+              return {
+                  name: item.name,
+                  id: item.value
+              }
+          });
           
+          输出：
+          [
+            {"name": "a", "id": "1"}, 
+            {"name": "b", "id": "2"} 
+          ]
+
       </code></pre>
 
     </div>

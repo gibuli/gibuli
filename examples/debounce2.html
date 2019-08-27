@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="referrer" content="no-referrer">
+    <meta name="renderer" content="webkit">
+    <title></title>
+</head>
+<body>
+	<script>
+		// immediate 表示第一次是否立即执行
+		function debounce(fn, wait = 50, immediate) {
+		    let timer = null
+		    return function(...args) {
+		        if (timer) clearTimeout(timer)
+
+		          // ------ 新增部分 start ------ 
+		          // immediate 为 true 表示第一次触发后执行
+		          // timer 为空表示首次触发
+		        if (immediate && !timer) {
+		            fn.apply(this, args)
+		        }
+		          // ------ 新增部分 end ------ 
+
+		        timer = setTimeout(() => {
+		            fn.apply(this, args)
+		        }, wait)
+		    }
+		}
+
+		// DEMO
+		// 执行 debounce 函数返回新函数
+		const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000, true)
+		// 第一次触发 scroll 执行一次 fn，后续只有在停止滑动 1 秒后才执行函数 fn
+		window.addEventListener('resize', betterFn)
+		
+
+		// fn 是需要节流处理的函数
+		// wait 是时间间隔
+		// function throttle(fn, wait) {
+
+		//   // previous 是上一次执行 fn 的时间
+		//   // timer 是定时器
+		//   let previous = 0, timer = null
+
+		//   // 将 throttle 处理结果当作函数返回
+		//   return function (...args) {
+
+		//     // 获取当前时间，转换成时间戳，单位毫秒
+		//     let now = +new Date()
+
+		//     // ------ 新增部分 start ------ 
+		//     // 判断上次触发的时间和本次触发的时间差是否小于时间间隔
+		//     if (now - previous < wait) {//防抖
+		//          // 如果小于，则为本次触发操作设立一个新的定时器
+		//        // 定时器时间结束后执行函数 fn 
+		//        if (timer) clearTimeout(timer)
+		//        timer = setTimeout(() => {
+		//        		console.log('防抖')
+		//           	previous = now
+		//             fn.apply(this, args)
+		//         }, wait)
+		//     // ------ 新增部分 end ------ 
+
+		//     } else {//节流
+		//        // 第一次执行
+		//        // 或者时间间隔超出了设定的时间间隔，执行函数 fn
+		//        console.log('节流')
+		//        previous = now
+		//        fn.apply(this, args)
+		//     }
+		//   }
+		// }
+
+		// // DEMO
+		// // 执行 throttle 函数返回新函数
+		// const betterFn = throttle(() => console.log('fn 节流执行了'), 1000)
+		// // 第一次触发 scroll 执行一次 fn，每隔 1 秒后执行一次函数 fn，停止滑动 1 秒后再执行函数 fn
+		// window.addEventListener('resize', betterFn)
+	</script>
+</body>
+</html>
