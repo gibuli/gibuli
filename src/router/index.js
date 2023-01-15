@@ -47,7 +47,7 @@ export const constantRouterMap = [
     redirect: "/quicklayout/image-text",
     name: "quicklayout",
     meta: {
-      title: "常用布局",
+      title: "常用布局1",
       icon: "nested"
     },
     alwaysShow: true,
